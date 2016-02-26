@@ -1,6 +1,8 @@
 function Hello($scope, $http) {
-    $http.get('http://localhost:3000/login').
+	alert('paa toppen');
+    $http.get('http://127.0.0.1:3000/login').
         success(function(data) {
-            $scope.greeting = data;
+			alert('test');
+            //$scope.greeting = data;
         });
 }
