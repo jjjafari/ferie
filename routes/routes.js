@@ -1,6 +1,23 @@
 var appRouter = function(app) {
+	
 	app.get("/", function(req, res) {
     res.send("Hello World22");
+	});
+	
+	app.get("/login", function(req, res) {
+    var accountMock = {
+        "username": "jjjafari",
+        "password": "djxxli44",
+    }
+    if(!req.query.username) {
+        return res.send({"status": "error", "message": "missing username"});
+    } else if(req.query.username != accountMock.username) {
+        return res.send({"status": "error", "message": "wrong username"});
+	} else if(req.query.password != accountMock.password) {
+        return res.send({"status": "error", "message": "wrong password"});
+    } else {
+         return res.send({"status": "ok", "message": "successful login"});
+    }
 	});
 	
 	
