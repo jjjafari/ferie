@@ -4,8 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Login form</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-	<script src="angular-route.min.js"></script>
 	<script src="controller.js"></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+<script src='http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.5/angular-material.js'></script>
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">  
+		<link rel='stylesheet prefetch' href='https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.5/angular-material.css'>
+		<link rel='stylesheet prefetch' href='https://material.angularjs.org/1.0.5/docs.css'>
+        <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-app="mainApp">
 	<div ng-view>{{$scope.login.message}}</div>
