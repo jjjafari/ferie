@@ -34,8 +34,7 @@ app.controller('loginCtrl', function($scope, $location, $rootScope, $http) {
 			$rootScope.loggedIn = true;
 			$location.path('/dashboard');
 		} else {
-			$rootScope.loggedIn = true;
-			$location.path('/dashboard');
+			alert('feil')
 		}
 		
 	};
