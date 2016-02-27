@@ -26,7 +26,7 @@ app.controller('loginCtrl', function($scope, $location, $rootScope, $http) {
 		$http.get('http://localhost:8080/login?username=' + $scope.username + '&password=' + $scope.password).
         success(function(data) {
             $scope.login = data;
-			//alert($scope.login.message);
+			alert($scope.login.username);
             //$scope.greeting = data;
         });
 		
