@@ -16,55 +16,30 @@ var appRouter = function(app) {
 		});
 		connection.connect();
 		
-		 
+		 var statusOk = false;
 		 var query = connection.query('SELECT * from ferie_users WHERE username = ' + "'" + req.query.username + "'" + ' AND password = ' + "'" + req.query.password + "'", function(err, rows, fields) {
-		   if (!err)
-			 console.log('The solution is: ', rows);
-		   else
-			 console.log('Error while performing Query: ' + err);
+		   if (!err){
+			   	console.log('The solution is: ', rows);
+		   }else{
+			   console.log('Error while performing Query: ' + err);
+		   }
+			console.log('lengde: ' + rows.length);
+			if(rows.length == 1) {
+				return res.json({"status": "ok", "message": "Successful login"});	
+			} else {
+				 console.log('SUUUUCCCCEEESSFFUUUULL LOGIN');
+				 return res.json({"status": "error", "message": "Wrong username or password"});
+				 
+			}
+			
+			
 		 });
 		 console.log('Query: ' + query.sql);
 		 
 		 connection.end();
-		console.log('usernameFromServer: ' + req.query.username);
-		console.log('passwordFromServer: ' + req.query.password);
+		 console.log('usernameFromServer: ' + req.query.username);
+		 console.log('passwordFromServer: ' + req.query.password);
 		
-
-		
-		/*
-		var tempUser = new User();
-		tempUser.checkUsernameAndPassword(req.query.username, function(err, username) {
-			if (err) {
-				console.log(err);
-			}else {
-				console.log('WWWWWWWWWWWWWWWWWWWWWW');
-			}
-			
-		});*/
-		
-		//console.log('tempuser.username: ' + tempUser.username);
-	
-		/*User.find({ username: 'sevilayha3' }, function(err, user) {
-			console.log('IMetoden: ' + user);
-		  if (err) throw err;
-
-		  // object of the user
-		  console.log('Object of the user: ' + user);
-		});
-		//console.log(testUser.users.username);
-		//console.log(testUser.user.username);
-		console.log(User.username);*/
-		
-		
-		if(!req.query.username) {
-			return res.json({"status": "error", "message": "missing username"});
-		} else if(req.query.username != "X") {
-			return res.json({"status": "error", "message": "wrong username"});
-		} else if(req.query.password != "XX") {
-			return res.json({"status": "error", "message": "wrong password"});
-		} else {
-			 return res.json({"status": "ok", "message": "successful login"});
-		}
 	});
 	
 	
