@@ -26,11 +26,11 @@ app.controller('loginCtrl', function($scope, $location, $rootScope, $http) {
 		$http.get('http://localhost:8080/login?username=' + $scope.username + '&password=' + $scope.password).
         success(function(data) {
             $scope.login = data;
-			alert($scope.login.username);
+			alert('Status: ' + $scope.login.status + '\nMessage: ' + $scope.login.message);
             //$scope.greeting = data;
         });
 		
-		if($scope.status == 'ok') {
+		if($scope.login.status == 'ok') {
 			$rootScope.loggedIn = true;
 			$location.path('/dashboard');
 		} else {
