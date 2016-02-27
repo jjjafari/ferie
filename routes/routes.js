@@ -66,6 +66,31 @@ var appRouter = function(app) {
 		
 	});
 	
+	app.get("/feriedager/:userid", function(req, res) {
+		
+		var connection = mysql.createConnection({
+		  host     : 'bedbuddy.no',
+		  user     : 'bedbunud_jj',
+		  password : 'Djxxli44',
+		  database : 'bedbunud_1'
+		});
+		connection.connect();
+
+		var query = connection.query('SELECT * FROM ferie_feriedatoer WHERE userid = ' + req.query.userid, function(err, rows, fields) {
+		   if (!err){
+			   	console.log('The solution is: ', rows);
+				return res.json(rows);
+		   }else{
+			   console.log('Error while performing Query: ' + err);
+		   }
+			
+			
+		 });
+		 console.log('Query: ' + query.sql);
+		 connection.end();
+		
+	});
+	
 	
 	app.get("/account", function(req, res) {
     var accountMock = {
