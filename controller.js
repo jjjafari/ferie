@@ -22,19 +22,19 @@ app.config(function($routeProvider) {
 
 app.controller('loginCtrl', function($scope, $location, $rootScope, $http) {
 	$scope.submit = function() {
-		
-		$http.get('http://localhost:8080/login').
+		alert('Username: ' + $scope.username + '\nPassword: ' + $scope.password);
+		$http.get('http://localhost:8080/login?username=' + $scope.username + '&password=' + $scope.password).
         success(function(data) {
             $scope.login = data;
-			alert(data);
+			//alert($scope.login.message);
             //$scope.greeting = data;
         });
 		
-		if($scope.username == 'admin' && $scope.password == 'admin') {
+		if($scope.status == 'ok') {
 			$rootScope.loggedIn = true;
 			$location.path('/dashboard');
 		} else {
-			alert('Wrong stuff');
+			alert('Wrong stuff - burde komme feilmeld på html-side');
 		}
 		
 	};

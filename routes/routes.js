@@ -1,22 +1,24 @@
 var appRouter = function(app) {
 	
 	app.get("/", function(req, res) {
-    res.send("Hello World22");
+    res.json("Hello World22");
 	});
 	
 	app.get("/login", function(req, res) {
+	console.log('usernameFromServer: ' + req.query.username);
+	console.log('passwordFromServer: ' + req.query.password);
     var accountMock = {
         "username": "jjjafari",
         "password": "djxxli44",
     }
     if(!req.query.username) {
-        return res.send({"status": "error", "message": "missing username"});
+        return res.json({"status": "error", "message": "missing username"});
     } else if(req.query.username != accountMock.username) {
-        return res.send({"status": "error", "message": "wrong username"});
+        return res.json({"status": "error", "message": "wrong username"});
 	} else if(req.query.password != accountMock.password) {
-        return res.send({"status": "error", "message": "wrong password"});
+        return res.json({"status": "error", "message": "wrong password"});
     } else {
-         return res.send({"status": "ok", "message": "successful login"});
+         return res.json({"status": "ok", "message": "successful login"});
     }
 	});
 	
