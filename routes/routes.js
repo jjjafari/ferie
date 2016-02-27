@@ -23,13 +23,10 @@ var appRouter = function(app) {
 		   }else{
 			   console.log('Error while performing Query: ' + err);
 		   }
-			console.log('lengde: ' + rows.length);
 			if(rows.length == 1) {
-				return res.json({"status": "ok", "message": "Successful login"});	
+				return res.json({"status": "ok", "message": "Successful login", "userid": rows[0].id});	
 			} else {
-				 console.log('SUUUUCCCCEEESSFFUUUULL LOGIN');
-				 return res.json({"status": "error", "message": "Wrong username or password"});
-				 
+				 return res.json({"status": "error", "message": "Wrong username or password"});	 
 			}
 			
 			
@@ -39,6 +36,33 @@ var appRouter = function(app) {
 		 connection.end();
 		 console.log('usernameFromServer: ' + req.query.username);
 		 console.log('passwordFromServer: ' + req.query.password);
+		
+	});
+	
+	app.post("/feriedager", function(req, res) {
+		
+		var connection = mysql.createConnection({
+		  host     : 'bedbuddy.no',
+		  user     : 'bedbunud_jj',
+		  password : 'Djxxli44',
+		  database : 'bedbunud_1'
+		});
+		connection.connect();
+
+			var status = 0;
+
+		var query = connection.query('INSERT INTO ferie_feriedatoer (dato, status, userid) VALUES (' + "'" +  req.query.fromDate + "'" + ',' + status + ',' + req.query.userid + ')', function(err, rows, fields) {
+		   if (!err){
+			   	console.log('The solution is: ', rows);
+				return res.json({"status": "ok", "message": "Added feriedager to DB"});
+		   }else{
+			   console.log('Error while performing Query: ' + err);
+		   }
+			
+			
+		 });
+		 console.log('Query: ' + query.sql);
+		 connection.end();
 		
 	});
 	
