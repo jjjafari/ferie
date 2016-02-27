@@ -17,13 +17,23 @@ var userSchema = new Schema({
   updated_at: Date
 });
 
-userSchema.methods.checkUsernameAndPassword = function(abc) {
+/*userSchema.methods.checkUsernameAndPassword = function(abc) {
 	console.log('i metoden dudify. Fra parameter: ');
 	console.log(abc);
   // add some stuff to the users name
   this.name = this.name + '-dude'; 
 
   return this.name;
+};*/
+
+userSchema.methods.checkUsernameAndPassword = function (uname, callback) {
+  User.find({username: uname}, function(err, users) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, users[0]);
+    }
+  });
 };
 
 // the schema is useless so far
