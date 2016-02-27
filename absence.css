@@ -1,0 +1,223 @@
+/*
+    Document   : absence
+    Created on : 08.feb.2013, 11:05:02
+    Author     : oivind
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+input.absencedate {
+	width: 100px;
+	text-align: center;
+}
+
+
+table#vacation-year-listing {
+    width: 90%;
+}
+
+table#vacation-year-listing td {
+    width: 33.333333%;
+    padding: 10px 10px;
+    cursor: pointer;
+    line-height: 22px;
+    text-align: left;
+    vertical-align: top;
+}
+table#vacation-year-listing td:hover {
+    background-color: #F5F2DA;
+}
+
+
+table#vacation-year-listing table.vacation-year-month-mini{
+    width: 90%;
+    margin: 0px auto;
+}
+table#vacation-year-listing table.vacation-year-month-mini th{
+    font-weight: bold;
+    font-size: 1em;
+}
+table#vacation-year-listing table.vacation-year-month-mini th,
+table#vacation-year-listing table.vacation-year-month-mini td{
+
+    width: 12.5%;
+    padding: 3px 1px;
+    line-height: normal;
+    text-align: center;
+    vertical-align: top;
+}
+table#vacation-year-listing table.vacation-year-month-mini td{
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+/*
+table#vacation-year-listing td span.accept{
+    padding: 0px 4px;
+    background-color: #090;
+    font-weight: bold;
+}
+
+table#vacation-year-listing td span.pending-accept{
+    padding: 0px 4px;
+    background-color: #fbec88;
+    font-weight: bold;
+}
+
+table#vacation-year-listing td span.pending-remove{
+    padding: 0px 4px;
+    background-color: #f66;
+    font-weight: bold;
+}
+*/
+
+
+table#vacation-month-listing {
+    width: 100%;
+}
+
+table#vacation-month-listing th.bighead {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+table#vacation-month-listing td, table#vacation-month-listing th {
+    text-align: center;
+    vertical-align: top;
+    width: 12.5%;
+    padding: 10px 10px;
+}
+table#vacation-month-listing td{
+    height: 100px;
+    width: 12.5%;
+    padding: 10px 10px;
+    border: 5px solid #fff;
+    background-image: none;
+}
+
+table#vacation-month-listing td span.date {
+    font-size: 2em;
+}
+
+table#vacation-month-listing td.toggle {
+    cursor: pointer;
+}
+
+table#vacation-month-listing td.toggle:hover {
+    
+}
+
+
+table#vacation-month-listing td.is-available:hover {
+    border: 5px solid #ccc !important;
+}
+
+
+
+td.accept, 
+table#vacation-month-listing td.accept:hover {
+    background-color: #090 !important;
+}
+table#vacation-month-listing td.accept:hover {
+    border: 5px solid #090 !important;
+}
+
+td.pending-accept, 
+table#vacation-month-listing td.pending-accept:hover {
+    background-color: #fbec88 !important;
+}
+table#vacation-month-listing td.pending-accept:hover {
+    border: 5px solid #fbec88 !important;
+}
+
+td.pending-remove,
+table#vacation-month-listing td.pending-remove:hover {
+    background-color: #f99 !important;
+}
+table#vacation-month-listing td.pending-remove:hover {
+    border: 5px solid #f99 !important;
+}
+
+
+
+
+
+
+table#vacation-month-listing td.selected-accept {
+    /*background-color: #cfc !important;*/
+    border: 5px solid #090 !important;
+}
+table#vacation-month-listing td.selected-accept:hover {
+    border: 5px solid #090 !important;
+}
+
+table#vacation-month-listing td.selected-remove {
+    /*background-color: #fcc !important;*/
+    border: 5px solid #f00 !important;
+}
+table#vacation-month-listing td.selected-remove:hover {
+    border: 5px solid #f00 !important;
+}
+
+
+
+
+
+
+table#vacation-list {
+    width: 100%;
+}
+
+table#vacation-list th,table#vacation-list td {
+    margin:0;
+    padding:3px 0px;
+}
+
+table#vacation-list th.highlighted,table#vacation-list td.highlighted {
+    background-color: #EEF2F5;
+}
+
+table#vacation-list th.sums,table#vacation-list td.sums {
+    background-color: #E7ECF0;
+}
+
+table#vacation-list th {
+    font-size: 9px;
+    font-weight: normal;
+    text-align: center;
+}
+
+table#vacation-list th.large {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table#vacation-list th.large {
+    font-size: 13px;
+    font-weight: bold;
+}
+table#vacation-list th.employee, table#vacation-list td.employee {
+    width: 10%;
+    font-size: 9px;
+    text-align: left;
+}
+
+table#vacation-list th.totals, table#vacation-list td.totals {
+    width: 2.5%;
+    font-size: 9px;
+    text-align: center;
+}
+
+table#vacation-list td.weekcell {
+    font-size: 9px;
+    text-align: center;
+    font-style: italic;
+}
+
+table#vacation-list td.employee, table#vacation-list td.totals,table#vacation-list td.weekcell{
+    border-top: 1px solid #000;
+}
+
+
